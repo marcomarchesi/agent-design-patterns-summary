@@ -6,7 +6,9 @@ A comprehensive guide to agentic AI system architectures based on Google Cloud d
 
 | Provider | Guide |
 |----------|-------|
-| ![Claude](https://img.shields.io/badge/Anthropic-Claude-orange) | [**claude-agent-patterns.md**](./claude-agent-patterns.md) |
+| ![Claude API](https://img.shields.io/badge/Anthropic-Claude_API-orange) | [**claude-agent-patterns.md**](./claude-agent-patterns.md) |
+| ![Claude SDK](https://img.shields.io/badge/Anthropic-Claude_Agent_SDK-blueviolet) | [**claude-sdk-agent-patterns.md**](./claude-sdk-agent-patterns.md) |
+| ![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o-green) | [**openai-agent-patterns.md**](./openai-agent-patterns.md) |
 | ![Gemini](https://img.shields.io/badge/Google-Gemini-blue) | [**gemini-agent-patterns.md**](./gemini-agent-patterns.md) |
 
 ---
