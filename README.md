@@ -1,6 +1,8 @@
 # Agent Design Patterns Summary
 
-A comprehensive guide to agentic AI system architectures based on Google Cloud documentation, ADK (Agent Development Kit), and Antonio Gulli's book "Agentic Design Patterns: A Hands-On Guide to Building Intelligent Systems".
+Hello! This is a comprehensive guide to agentic AI system architectures based on various sources, including Google Cloud documentation, OpenAI documentation, Claude documentation, ADK (Agent Development Kit), and Antonio Gulli's book "Agentic Design Patterns: A Hands-On Guide to Building Intelligent Systems".
+
+Enjoy!
 
 ## 🛠️ Implementation Guides
 
@@ -10,6 +12,7 @@ A comprehensive guide to agentic AI system architectures based on Google Cloud d
 | ![Claude SDK](https://img.shields.io/badge/Anthropic-Claude_Agent_SDK-blueviolet) | [**claude-sdk-agent-patterns.md**](./claude-sdk-agent-patterns.md) |
 | ![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o-green) | [**openai-agent-patterns.md**](./openai-agent-patterns.md) |
 | ![Gemini](https://img.shields.io/badge/Google-Gemini-blue) | [**gemini-agent-patterns.md**](./gemini-agent-patterns.md) |
+| ![Google ADK](https://img.shields.io/badge/Google-ADK-red) | [**google-adk-agent-patterns.md**](./google-adk-agent-patterns.md) |
 
 ---
 
@@ -122,16 +125,6 @@ flowchart LR
 ```
 
 
-### ADK Implementation
-```python
-from google.adk.agents import SequentialAgent
-
-pipeline = SequentialAgent(
-    name="data_pipeline",
-    sub_agents=[parser_agent, extractor_agent, summarizer_agent]
-)
-```
-
 ### Use Cases
 - Data processing pipelines (ETL)
 - Document processing workflows
@@ -185,17 +178,6 @@ flowchart TB
 ```
 
 
-### ADK Implementation
-```python
-from google.adk.agents import ParallelAgent
-
-review_system = ParallelAgent(
-    name="code_review",
-    sub_agents=[security_agent, style_agent, perf_agent]
-)
-# Note: Each agent writes to unique state key to avoid race conditions
-```
-
 ### Use Cases
 - Code review (security, style, performance checks in parallel)
 - Multi-source data gathering
@@ -246,17 +228,6 @@ flowchart TB
                                       └──────────────┘
 ```
 
-
-### ADK Implementation
-```python
-from google.adk.agents import CoordinatorAgent
-
-support_system = CoordinatorAgent(
-    name="customer_support",
-    sub_agents=[billing_agent, tech_support_agent, returns_agent]
-)
-# AutoFlow mechanism handles routing based on agent descriptions
-```
 
 ### Use Cases
 - Customer service routing
@@ -318,19 +289,6 @@ flowchart TB
 ```
 
 
-### ADK Implementation
-```python
-from google.adk.tools import AgentTool
-
-# Wrap sub-agent as a tool for explicit calling
-research_tool = AgentTool(agent=research_assistant)
-
-master_agent = LlmAgent(
-    name="report_writer",
-    tools=[research_tool, analysis_tool]
-)
-```
-
 ### Use Cases
 - Complex report generation
 - Multi-phase project planning
@@ -374,17 +332,6 @@ flowchart TB
                └─────────────────────┘
 ```
 
-
-### ADK Implementation
-```python
-from google.adk.agents import LoopAgent
-
-monitor = LoopAgent(
-    name="monitoring_loop",
-    sub_agents=[check_agent, process_agent],
-    max_iterations=10  # Prevent infinite loops
-)
-```
 
 ### Use Cases
 - Monitoring and polling tasks
@@ -443,20 +390,6 @@ flowchart TB
 ```
 
 
-### ADK Implementation
-```python
-review_cycle = SequentialAgent(
-    name="review_cycle",
-    sub_agents=[generator_agent, critic_agent]
-)
-
-quality_loop = LoopAgent(
-    name="quality_gate",
-    sub_agents=[review_cycle],
-    max_iterations=3
-)
-```
-
 ### Use Cases
 - Code generation with syntax/security validation
 - Content creation with compliance review
@@ -509,16 +442,6 @@ flowchart TB
                                                         └─────────────┘
 ```
 
-
-### ADK Implementation
-```python
-refinement_loop = LoopAgent(
-    name="refinement",
-    sub_agents=[generator, critique, refiner],
-    max_iterations=5
-)
-# Agent can signal escalate=True in EventActions for early exit
-```
 
 ### Use Cases
 - Creative writing and editing
@@ -576,20 +499,6 @@ flowchart TB
                                                └─────────┘
 ```
 
-
-### ADK Implementation
-```python
-def approval_tool(action_description: str) -> bool:
-    """Pauses execution and requests human approval."""
-    print(f"APPROVAL REQUIRED: {action_description}")
-    response = input("Approve? (yes/no): ")
-    return response.lower() == "yes"
-
-agent = LlmAgent(
-    name="transaction_agent",
-    tools=[approval_tool, execute_transaction]
-)
-```
 
 ### Use Cases
 - Financial transactions
@@ -1012,18 +921,6 @@ flowchart TB
                               └─────────────────┘
 ```
 
-
-### ADK Implementation
-```python
-from google.adk.memory import InMemoryMemoryService
-from google.adk.sessions import InMemorySessionService
-
-# Session state for short-term memory
-session_service = InMemorySessionService()
-
-# Memory service for long-term storage
-memory_service = InMemoryMemoryService()
-```
 
 ### Use Cases
 - Conversational agents
