@@ -1088,6 +1088,8 @@ flowchart LR
 
 ## Resources
 
+- [Claude Agent SDK Documentation](https://platform.claude.com/docs/en/agent-sdk/overview)
+- [OpenAI Agents Guide](https://platform.openai.com/docs/guides/agents)
 - [Google Cloud: Choose a design pattern for your agentic AI system](https://cloud.google.com/architecture/choose-design-pattern-agentic-ai-system)
 - [Google ADK Documentation](https://google.github.io/adk-docs/)
 - [Developer's guide to multi-agent patterns in ADK](https://developers.googleblog.com/en/developers-guide-to-multi-agent-patterns-in-adk/)
